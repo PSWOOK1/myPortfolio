@@ -1,7 +1,12 @@
+@charset "UTF-8";
 div,
 input,
 textarea {
   box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
 }
 
 body {
@@ -11,4 +16,57 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.header {
+  background: grey;
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  padding: 0 2%;
+}
+
+.header-logo {
+  width: auto;
+  margin: auto 3vw;
+  font-size: 20px;
+}
+
+.header-items {
+  display: flex;
+}
+
+.header-item {
+  width: auto;
+  margin: auto 3vw;
+  font-size: 20px;
+  display: flex;
+  place-items: center;
+}
+
+.body {
+  height: 200vh;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh; /* 뷰포트 높이에 맞게 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+#page1 {
+  background: red;
+}
+
+#page2 {
+  background: green;
+}
+
+#page3 {
+  background: blue;
 }/*# sourceMappingURL=main.css.map */
