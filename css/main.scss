@@ -17,6 +17,13 @@ a {
   color: inherit;
 }
 
+@mixin headerFont() {
+  width: auto;
+  margin: auto 3vw;
+  font-size: 21px;
+  font-weight: 700;
+}
+
 .header {
   background: grey;
   width: 100vw;
@@ -31,9 +38,7 @@ a {
 }
 
 .header-logo {
-  width: auto;
-  margin: auto 3vw;
-  font-size: 20px;
+  @include headerFont;
 }
 
 .header-items {
@@ -41,9 +46,8 @@ a {
 }
 
 .header-item {
-  width: auto;
-  margin: auto 3vw;
-  font-size: 20px;
+  @include headerFont;
+
   display: flex;
   place-items: center;
 }
@@ -54,7 +58,7 @@ a {
 
 .page {
   width: 100vw;
-  height: 100vh; /* 뷰포트 높이에 맞게 설정 */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

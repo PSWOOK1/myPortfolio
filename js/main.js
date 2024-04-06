@@ -1,45 +1,55 @@
-// 풀페이지 스크롤 기능
-
 document.addEventListener("DOMContentLoaded", (event) => {
-  // 현재 보여지고 있는 섹션의 인덱스를 저장하는 변수
+  // 현재 페이지의 인덱스를 저장하는 변수
   let currentPage = 0;
-  // 스크롤 중인지를 판별하는 플래그 변수 (true= 중 false= 아님)
   let isScrolling = false;
 
+  // 특정 페이지 인덱스로 이동하는 함수
+  const moveToPage = (pageIndex) => {
+    // 현재 페이지를 업데이트
+    currentPage = pageIndex;
+    // window 객체의 scrollTo 함수를 사용하여 해당 페이지 위치로 스크롤
+    window.scrollTo({
+      top: window.innerHeight * currentPage, // 이동할 페이지의 세로 위치를 계산
+      behavior: "smooth", // 스크롤 이동 스무~스 하게
+    });
+  };
+
+  // 페이지로 이동하는 이벤트 리스너를 추가하는 함수
+  const addClickListenerToHeaderItem = () => {
+    document.querySelectorAll(".header-item").forEach((item, index) => {
+      item.addEventListener("click", () => {
+        moveToPage(index); // 클릭된 항목에 해당하는 페이지 인덱스로 이동합니다.
+      });
+    });
+  };
+
+  addClickListenerToHeaderItem(); // 함수 호출
+
+  // 스크롤 이벤트를 처리하는 함수
   function scrollEventHandler(event) {
-    // 스크롤 중에 다른 이벤트 발생 못하게 방지
+    // 스크롤중에 추가 이벤트 발생 차단
     if (isScrolling) return;
-
     isScrolling = true;
-
-    // 설정한 시간 지나면 스크롤 중 플래그를 해제
-    // 스크롤을 많이 하면 계속 넘어가는거 방지 (스크롤 중이면 추가 이벤트 발생 X)
+    // setTimeout 후에 이벤트 발생 허용
     setTimeout(() => {
       isScrolling = false;
     }, 800);
 
-    // 스크롤 방향을 결정하는 deltaY 값 가져오기
+    // 스크롤 방향에 따라 페이지 인덱스 증/감
     const delta = event.deltaY;
-
-    // 아래로 스크롤했고, 마지막 페이지가 아니라면 인덱스 증가
     if (
       delta > 0 &&
       currentPage < document.querySelectorAll(".page").length - 1
     ) {
-      currentPage++;
-    }
-    // 위로 스크롤했고, 첫 번째 페이지가 아니라면 인덱스 감소
-    else if (delta < 0 && currentPage > 0) {
-      currentPage--;
+      currentPage++; // 아래로 스크롤 시 페이지 인덱스 증가
+    } else if (delta < 0 && currentPage > 0) {
+      currentPage--; // 위로 스크롤 시 페이지 인덱스 감소
     }
 
-    // 계산된 인덱스로 페이지를 부드럽게 스크롤
-    window.scrollTo({
-      top: window.innerHeight * currentPage, // 섹션 인덱스에 따라 이동할 높이를 계산
-      behavior: "smooth", // 스크롤 이동을 부드럽게 처리
-    });
+    // 업데이트된 페이지 인덱스로 이동
+    moveToPage(currentPage);
   }
 
-  // 윈도우 객체에 wheel 이벤트 리스너를 추가 -> 스크롤 시 scrollEventHandler 함수를 호출
+  // 'wheel' = 스크롤 시 scrollEventHandler 호출
   window.addEventListener("wheel", scrollEventHandler);
 });
