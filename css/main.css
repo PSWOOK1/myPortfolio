@@ -1,3 +1,4 @@
+@charset "UTF-8";
 div,
 input,
 textarea {
@@ -30,8 +31,10 @@ a {
 .header-logo {
   width: auto;
   margin: auto 3vw;
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 700;
+  color: white;
+  text-shadow: -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 1px 1px 0 #000; /* 하,우 */
 }
 
 .header-items {
@@ -41,8 +44,10 @@ a {
 .header-item {
   width: auto;
   margin: auto 3vw;
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 700;
+  color: white;
+  text-shadow: -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 1px 1px 0 #000; /* 하,우 */
   display: flex;
   place-items: center;
   cursor: pointer;

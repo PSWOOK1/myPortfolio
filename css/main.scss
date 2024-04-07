@@ -20,8 +20,11 @@ a {
 @mixin headerFont() {
   width: auto;
   margin: auto 3vw;
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 700;
+  color: white;
+  text-shadow: -1px -1px 0 #000, /* 상,좌 */ -1px 1px 0 #000,
+    /* 하,좌 */ 1px -1px 0 #000, /* 상,우 */ 1px 1px 0 #000; /* 하,우 */
 }
 
 @mixin bodyFont() {
