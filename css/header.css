@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.header {
+  background: rgb(224, 224, 224);
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 5;
+  padding: 0 2%;
+}
+
+.header-logo {
+  width: auto;
+  margin: auto 3vw;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  text-shadow: -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 1px 1px 0 #000; /* 하,우 */
+}
+
+.header-items {
+  display: flex;
+}
+
+.header-item {
+  width: auto;
+  margin: auto 3vw;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  text-shadow: -1px -1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, 1px 1px 0 #000; /* 하,우 */
+  display: flex;
+  place-items: center;
+  cursor: pointer;
+}/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,21 @@
+@import "mixin";
+
+.slide_item.item1 {
+  background: linear-gradient(to bottom, #fee300, #7a5c3b, #fee300);
+  //   background: linear-gradient(to bottom, #7a5c3b, #fee300, #7a5c3b);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+}
+
+.pc-img {
+  @include page2_img();
+}
+
+.pc-info {
+  @include page2_info();
+}
+
+.tool {
+  @include page2_info_tool();
+}

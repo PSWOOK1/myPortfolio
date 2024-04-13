@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // setTimeout 후에 이벤트 발생 허용
     setTimeout(() => {
       isScrolling = false;
-    }, 800);
+    }, 1000);
 
     // 스크롤 방향에 따라 페이지 인덱스 증/감
     const delta = event.deltaY;

@@ -1,0 +1,68 @@
+@mixin headerFont() {
+  width: auto;
+  margin: auto 3vw;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  text-shadow: -1px -1px 0 #000, /* 상,좌 */ -1px 1px 0 #000,
+    /* 하,좌 */ 1px -1px 0 #000, /* 상,우 */ 1px 1px 0 #000; /* 하,우 */
+}
+
+@mixin bodyFont() {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+@mixin page2_img() {
+  position: relative;
+
+  img {
+    width: 100%;
+    position: absolute;
+    margin: auto 0;
+
+    // top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  img:nth-of-type(1) {
+    z-index: 5;
+  }
+
+  img:nth-of-type(2) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+  }
+}
+
+@mixin page2_info() {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12vh;
+
+  color: white;
+  text-shadow: 1.5px 1.5px 0px #000000, 1.5px 1.5px 0px #000000,
+    1.5px 1.5px 0px #000000;
+  @include bodyFont();
+  font-weight: 900;
+
+  span {
+    margin-bottom: 3.5%;
+  }
+}
+
+@mixin page2_info_tool() {
+  span {
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 1.5px 1.5px 0px #000000, 1.5px 1.5px 0px #000000,
+      1.5px 1.5px 0px #000000;
+    padding: 0.5% 1.5%;
+    border-radius: 15px;
+    line-height: 2.5;
+    width: auto;
+    white-space: nowrap;
+    font-size: 15px;
+  }
+}
