@@ -47,4 +47,18 @@
   width: auto;
   white-space: nowrap;
   font-size: 15px;
+}
+
+.pc-info-btn {
+  margin-top: 5%;
+}
+.pc-info-btn span {
+  border: 3.5px solid rgb(255, 255, 255);
+  box-shadow: 1.5px 1.5px 0px #000000, 1.5px 1.5px 0px #000000, 1.5px 1.5px 0px #000000;
+  padding: 1% 2%;
+  margin-right: 2%;
+  border-radius: 15px;
+  width: auto;
+  white-space: nowrap;
+  font-size: 30px;
 }/*# sourceMappingURL=page2.css.map */
